@@ -1,286 +1,886 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elikem's Graphic Designing | Brand & Visual Solutions</title>
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #6366f1;
-            --accent-hover: #4f46e5;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Delia Pay | Payments Made Simple</title><style>
+:root{
+    --primary:#16a085;
+    --primary-dark:#0e7a66;
+    --dark:#102a43;
+    --light:#f6f9fc;
+    --white:#ffffff;
+    --text:#52616b;
+    --border:#e5e9ee;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.6;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--text-main);
-            text-transform: uppercase;
-        }
+/* NAVIGATION */
 
-        .logo span {
-            color: var(--accent-color);
-        }
+nav{
+    width:100%;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:var(--dark);
+    text-decoration:none;
+}
 
-        .nav-links a:hover {
-            color: var(--text-main);
-        }
+.logo span{
+    color:var(--primary);
+}
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 5rem 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
+.nav-links a{
+    color:var(--dark);
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+}
 
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
+.nav-links a:hover{
+    color:var(--primary);
+}
 
-        .btn {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
+.nav-login{
+    padding:10px 18px;
+    border:1px solid var(--primary);
+    border-radius:7px;
+    color:var(--primary)!important;
+}
 
-        .btn:hover {
-            background-color: var(--accent-hover);
-        }
+.nav-signup{
+    padding:11px 18px;
+    background:var(--primary);
+    color:white!important;
+    border-radius:7px;
+}
 
-        /* Services Section */
-        .services {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 5%;
-        }
+.nav-signup:hover{
+    background:var(--primary-dark);
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-        }
+.menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    font-size:25px;
+    cursor:pointer;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
+/* HERO */
 
-        .card {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #334155;
-            transition: transform 0.3s;
-        }
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    padding:70px 5%;
+    background:
+    linear-gradient(135deg,#f6fffc,#ffffff);
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.hero-container{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
 
-        .card h3 {
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
+.hero h1{
+    font-size:58px;
+    line-height:1.08;
+    margin-bottom:22px;
+    letter-spacing:-2px;
+}
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
+.hero h1 span{
+    color:var(--primary);
+}
 
-        /* Portfolio Gallery */
-        .portfolio {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 5%;
-        }
+.hero p{
+    color:var(--text);
+    font-size:18px;
+    max-width:560px;
+    margin-bottom:30px;
+}
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-        .portfolio-item {
-            background-color: var(--card-bg);
-            height: 250px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #334155;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
+.btn{
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+    padding:15px 24px;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:bold;
+    display:inline-block;
+    transition:.25s;
+}
 
-        /* Contact Section */
-        .contact {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 4rem 1rem 6rem;
-            text-align: center;
-        }
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
 
-        .contact-email {
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
+.btn-primary:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+}
 
-        .contact-email a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
+.btn-outline{
+    border:1px solid var(--border);
+    background:white;
+    color:var(--dark);
+}
 
-        .contact-email a:hover {
-            text-decoration: underline;
-        }
+.btn-outline:hover{
+    border-color:var(--primary);
+    color:var(--primary);
+}
 
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
+/* DASHBOARD CARD */
 
-        .contact input, .contact textarea {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 6px;
-            border: 1px solid #334155;
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            font-size: 1rem;
-        }
+.dashboard-card{
+    background:#102a43;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 25px 60px rgba(16,42,67,.18);
+    color:white;
+}
 
-        .contact textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+.dashboard-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            border-top: 1px solid #334155;
-            font-size: 0.9rem;
-        }
-    </style>
-</head>
-<body>
+.dashboard-title{
+    font-size:16px;
+    opacity:.8;
+}
 
-    <nav>
-        <div class="logo">ELIKEM'S <span>GRAPHICS</span></div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+.live{
+    background:rgba(22,160,133,.2);
+    color:#53e1c5;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+}
 
-    <header class="hero">
-        <h1>Visual identities that leave a lasting impression.</h1>
-        <p>Specializing in brand identity, custom emblem designs, digital retouching, and high-impact visual marketing assets.</p>
-        <a href="#contact" class="btn">Start a Project</a>
-    </header>
+.balance-card{
+    background:linear-gradient(135deg,#16a085,#0e7a66);
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:20px;
+}
 
-    <section id="services" class="services">
-        <h2 class="section-title">Design Services</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Brand Identity & Logos</h3>
-                <p>Crafting unique 2D/3D emblems, luxury typography, and full visual branding packages built to set your business apart.</p>
-            </div>
-            <div class="card">
-                <h3>Digital Marketing Assets</h3>
-                <p>Designing eye-catching social media graphics, promotional banners, and artwork tailored to boost engagement.</p>
-            </div>
-            <div class="card">
-                <h3>Photo Retouching & Mockups</h3>
-                <p>Delivering high-end urban portrait retouching, realistic product mockups, and precise artistic visual compositions.</p>
-            </div>
-        </div>
-    </section>
+.balance-card small{
+    opacity:.8;
+}
 
-    <section id="portfolio" class="portfolio">
-        <h2 class="section-title">Featured Designs</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">Emblem & Logo Showcase</div>
-            <div class="portfolio-item">Social Media & Ad Artwork</div>
-            <div class="portfolio-item">Product & Studio Mockups</div>
-        </div>
-    </section>
+.balance-card h2{
+    font-size:32px;
+    margin-top:5px;
+}
 
-    <section id="contact" class="contact">
-        <h2 class="section-title">Let's Work Together</h2>
-        <p style="color: var(--text-muted);">Have a project or design concept in mind? Fill out the form below or email me directly.</p>
-        <p class="contact-email">Direct Email: <a href="mailto:Elikemjasper91@gmail.com">Elikemjasper91@gmail.com</a></p>
-        
-        <!-- Live Formspree Integration -->
-        <form action="https://formspree.io/f/meajygow" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Tell me about your project..." required></textarea>
-            <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Message</button>
-        </form>
-    </section>
+.stats-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
 
-    <footer>
-        <p>&copy; 2026 Elikem's Graphic Designing. All rights reserved. | <a href="mailto:Elikemjasper91@gmail.com" style="color: var(--text-muted);">Elikemjasper91@gmail.com</a></p>
-    </footer>
+.stat{
+    background:rgba(255,255,255,.08);
+    padding:18px;
+    border-radius:12px;
+}
 
-</body>
+.stat small{
+    color:#b7c6d5;
+}
+
+.stat h3{
+    margin-top:5px;
+}
+
+/* SECTIONS */
+
+.section{
+    padding:90px 5%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 55px;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:var(--text);
+    font-size:17px;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.feature-card{
+    background:white;
+    padding:30px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.feature-icon{
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    background:#e7faf5;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.feature-card h3{
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    color:var(--text);
+    font-size:15px;
+}
+
+/* HOW IT WORKS */
+
+.how-section{
+    background:white;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+.step{
+    text-align:center;
+}
+
+.step-number{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    margin:0 auto 20px;
+    font-size:20px;
+}
+
+.step p{
+    color:var(--text);
+}
+
+/* STATS */
+
+.stats-section{
+    background:var(--dark);
+    color:white;
+}
+
+.stats-container{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    text-align:center;
+}
+
+.big-stat h2{
+    color:#53e1c5;
+    font-size:38px;
+}
+
+.big-stat p{
+    opacity:.75;
+}
+
+/* CTA */
+
+.cta{
+    padding:90px 5%;
+}
+
+.cta-box{
+    max-width:1000px;
+    margin:auto;
+    padding:65px 40px;
+    text-align:center;
+    border-radius:20px;
+    background:linear-gradient(135deg,var(--primary),#118a73);
+    color:white;
+}
+
+.cta-box h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.cta-box p{
+    opacity:.9;
+    margin-bottom:30px;
+}
+
+.cta-box .btn{
+    background:white;
+    color:var(--primary);
+}
+
+/* FOOTER */
+
+footer{
+    background:#081b2c;
+    color:white;
+    padding:55px 5% 25px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo{
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.footer-text{
+    color:#a9b8c6;
+    max-width:350px;
+}
+
+.footer-links h4{
+    margin-bottom:15px;
+}
+
+.footer-links a{
+    display:block;
+    color:#a9b8c6;
+    text-decoration:none;
+    margin:8px 0;
+}
+
+.footer-links a:hover{
+    color:#53e1c5;
+}
+
+.copyright{
+    max-width:1200px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#8ca0b3;
+    text-align:center;
+    font-size:14px;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-content{
+    background:white;
+    width:100%;
+    max-width:430px;
+    padding:30px;
+    border-radius:15px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.modal-content h2{
+    margin-bottom:8px;
+}
+
+.modal-content p{
+    color:var(--text);
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.form-group input{
+    width:100%;
+    padding:13px;
+    border:1px solid var(--border);
+    border-radius:7px;
+    font-size:15px;
+}
+
+.form-btn{
+    width:100%;
+    margin-top:5px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:68px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        padding:25px;
+        border-bottom:1px solid var(--border);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero{
+        padding-top:50px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        letter-spacing:-1px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .features,
+    .steps,
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .cta-box h2{
+        font-size:32px;
+    }
+
+    .stats-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+</style></head><body><!-- NAVIGATION --><nav>
+    <div class="nav-container">    <a href="#" class="logo">
+        Delia<span>Pay</span>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#about">About</a>
+
+        <a href="#" class="nav-login" onclick="openLogin();return false;">
+            Sign In
+        </a>
+
+        <a href="#" class="nav-signup" onclick="openSignup();return false;">
+            Create Account
+        </a>
+    </div>
+
+</div>
+
+</nav><!-- HERO --><section class="hero"><div class="hero-container"><div><h1>
+Payments made
+<span>simple.</span>
+</h1><p>
+Delia Pay helps businesses and individuals manage payments,
+create payment links, track transactions, and grow their business
+from one simple dashboard.
+</p><div class="hero-buttons"><a href="#" onclick="openSignup();return false;" class="btn btn-primary">
+Create Free Account
+</a><a href="#features" class="btn btn-outline">
+Explore Features
+</a></div></div><!-- DASHBOARD PREVIEW --><div class="dashboard-card"><div class="dashboard-top"><div>
+<div class="dashboard-title">
+Delia Pay Dashboard
+</div>
+</div><div class="live">
+● LIVE
+</div></div><div class="balance-card"><small>Total Payments</small>
+
+<h2>GH₵ 12,450.00</h2></div><div class="stats-grid"><div class="stat"><small>Transactions</small>
+
+<h3>128</h3></div><div class="stat"><small>Payment Links</small>
+
+<h3>14</h3></div><div class="stat"><small>Successful</small>
+
+<h3>96%</h3></div><div class="stat"><small>This Month</small>
+
+<h3>+18%</h3></div></div></div></div></section><!-- FEATURES --><section class="section" id="features"><div class="container"><div class="section-title"><h2>
+Everything you need to manage payments
+</h2><p>
+Simple tools designed to help individuals and businesses
+manage payment activities.
+</p></div><div class="features"><div class="feature-card"><div class="feature-icon">
+💳
+</div><h3>
+Accept Payments
+</h3><p>
+Create a simple payment experience for your customers.
+</p></div><div class="feature-card"><div class="feature-icon">
+🔗
+</div><h3>
+Payment Links
+</h3><p>
+Create and share payment links with customers quickly.
+</p></div><div class="feature-card"><div class="feature-icon">
+📊
+</div><h3>
+Track Transactions
+</h3><p>
+View your payments and transaction history in one dashboard.
+</p></div><div class="feature-card"><div class="feature-icon">
+🧾
+</div><h3>
+Payment Requests
+</h3><p>
+Send professional payment requests to your customers.
+</p></div><div class="feature-card"><div class="feature-icon">
+👥
+</div><h3>
+Business Accounts
+</h3><p>
+Manage your business payment activities from one place.
+</p></div><div class="feature-card"><div class="feature-icon">
+🔒
+</div><h3>
+Secure Platform
+</h3><p>
+Future versions can use secure authentication and trusted payment providers.
+</p></div></div></div></section><!-- HOW IT WORKS --><section class="section how-section" id="how"><div class="container"><div class="section-title"><h2>
+How Delia Pay works
+</h2><p>
+Get started with a simple process.
+</p></div><div class="steps"><div class="step"><div class="step-number">
+1
+</div><h3>
+Create an Account
+</h3><p>
+Sign up and create your Delia Pay profile.
+</p></div><div class="step"><div class="step-number">
+2
+</div><h3>
+Create a Payment
+</h3><p>
+Create a payment request or payment link.
+</p></div><div class="step"><div class="step-number">
+3
+</div><h3>
+Track Activity
+</h3><p>
+Monitor your payment activity from your dashboard.
+</p></div></div></div></section><!-- STATS --><section class="section stats-section"><div class="stats-container"><div class="big-stat"><h2>Fast</h2><p>Simple payment tools</p></div><div class="big-stat"><h2>Easy</h2><p>User-friendly dashboard</p></div><div class="big-stat"><h2>24/7</h2><p>Access your account</p></div><div class="big-stat"><h2>Secure</h2><p>Security-focused design</p></div></div></section><!-- CTA --><section class="cta"><div class="cta-box"><h2>
+Ready to get started?
+</h2><p>
+Create your Delia Pay account and explore the platform.
+</p><a href="#" onclick="openSignup();return false;" class="btn">
+Create Free Account
+</a></div></section><!-- FOOTER --><footer id="about"><div class="footer-container"><div><div class="footer-logo">
+DeliaPay
+</div><p class="footer-text">A payment platform prototype designed to make payment
+management simple.
+
+</p></div><div class="footer-links"><h4>
+Platform
+</h4><a href="#features">
+Features
+</a><a href="#how">
+How It Works
+</a><a href="#">
+Pricing
+</a></div><div class="footer-links"><h4>
+Company
+</h4><a href="#">
+About
+</a><a href="#">
+Contact
+</a><a href="#">
+Privacy
+</a></div></div><div class="copyright">© 2026 Delia Pay. All rights reserved.
+
+</div></footer><!-- SIGN UP MODAL --><div class="modal" id="signupModal"><div class="modal-content"><span class="close" onclick="closeSignup()">
+×
+</span><h2>
+Create Account
+</h2><p>
+Join Delia Pay and explore the platform.
+</p><form onsubmit="signupDemo(event)"><div class="form-group"><label>
+Full Name
+</label><input type="text" required placeholder="Enter your name"></div><div class="form-group"><label>
+Email Address
+</label><input type="email" required placeholder="example@email.com"></div><div class="form-group"><label>
+Password
+</label><input type="password" required placeholder="Create a password"></div><button class="btn btn-primary form-btn">
+Create Account
+</button></form></div></div><!-- LOGIN MODAL --><div class="modal" id="loginModal"><div class="modal-content"><span class="close" onclick="closeLogin()">
+×
+</span><h2>
+Welcome Back
+</h2><p>
+Sign in to your Delia Pay account.
+</p><form onsubmit="loginDemo(event)"><div class="form-group"><label>
+Email Address
+</label><input type="email" required placeholder="example@email.com"></div><div class="form-group"><label>
+Password
+</label><input type="password" required placeholder="Enter your password"></div><button class="btn btn-primary form-btn">
+Sign In
+</button></form></div></div><script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    const navLinks =
+    document.getElementById("navLinks");
+
+    navLinks.classList.toggle("active");
+
+}
+
+
+/* SIGNUP */
+
+function openSignup(){
+
+    document.getElementById(
+    "signupModal"
+    ).style.display="flex";
+
+}
+
+
+function closeSignup(){
+
+    document.getElementById(
+    "signupModal"
+    ).style.display="none";
+
+}
+
+
+/* LOGIN */
+
+function openLogin(){
+
+    document.getElementById(
+    "loginModal"
+    ).style.display="flex";
+
+}
+
+
+function closeLogin(){
+
+    document.getElementById(
+    "loginModal"
+    ).style.display="none";
+
+}
+
+
+/* DEMO SIGNUP */
+
+function signupDemo(event){
+
+    event.preventDefault();
+
+    alert(
+    "Account creation demo successful! Firebase authentication will be connected in the next step."
+    );
+
+    closeSignup();
+
+}
+
+
+/* DEMO LOGIN */
+
+function loginDemo(event){
+
+    event.preventDefault();
+
+    alert(
+    "Login demo successful! Real authentication will be added in the next step."
+    );
+
+    closeLogin();
+
+}
+
+
+/* CLOSE MODALS WHEN CLICKING OUTSIDE */
+
+window.onclick=function(event){
+
+    const signupModal =
+    document.getElementById("signupModal");
+
+    const loginModal =
+    document.getElementById("loginModal");
+
+
+    if(event.target === signupModal){
+
+        closeSignup();
+
+    }
+
+
+    if(event.target === loginModal){
+
+        closeLogin();
+
+    }
+
+}
+
+</script></body>
 </html>
